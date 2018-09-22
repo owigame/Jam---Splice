@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5762458410b4144be5d5f70674cd45, type: 3}
+  m_Name: Elephant
+  m_EditorClassIdentifier: 
+  creaturePrefab: {fileID: 1140917723296408, guid: 65781b57a1b636b4bbdb578c433d3821,
+    type: 2}
+  head: {fileID: 21300004, guid: 0465e0561e224364c86fac91f8f1071b, type: 3}
+  jaw: {fileID: 21300006, guid: 0465e0561e224364c86fac91f8f1071b, type: 3}
+  body: {fileID: 21300010, guid: 0465e0561e224364c86fac91f8f1071b, type: 3}
+  tail: {fileID: 21300008, guid: 0465e0561e224364c86fac91f8f1071b, type: 3}
+  frontLegs: {fileID: 21300000, guid: 0465e0561e224364c86fac91f8f1071b, type: 3}
+  backLegs: {fileID: 21300002, guid: 0465e0561e224364c86fac91f8f1071b, type: 3}
