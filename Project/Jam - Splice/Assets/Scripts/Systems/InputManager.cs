@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour {
 
+	public static InputManager instance;
+
 	[Header ("Move Parameters")]
 	public float moveSpeed = 1;
 
@@ -12,10 +14,20 @@ public class InputManager : MonoBehaviour {
 	public float chargeSpeed = 2;
 	public float chargeWarmUp = 1;
 	public float chargeDuration = 1;
+	public float chargeDamage = 30;
+
+	[Header("Stomp Parameters")]
+	public float stompDamage = 20;
+	public float stunDuration = 3;
 
 	[Header ("Player Creatures")]
 	List<Player> _Input = new List<Player> ();
 	public List<CreatureLinks> playerCreatures = new List<CreatureLinks> ();
+
+	void Awake()
+	{
+		instance = this;
+	}
 
 	void Start () {
 		_Input.Add (ReInput.players.GetPlayer (0));
@@ -24,7 +36,7 @@ public class InputManager : MonoBehaviour {
 
 	void Update () {
 		foreach (Player input in _Input) {
-			Move (input, input.GetAxis ("Horizontal"));
+			Move (input, input.GetAxis ("Horizontal"), input.GetAxis ("Vertical"));
 			if (input.GetButtonDown ("Charge")) {
 				Charge (input);
 			}
@@ -37,8 +49,8 @@ public class InputManager : MonoBehaviour {
 		}
 	}
 
-	void Move (Player input, float amount) {
-		playerCreatures[_Input.IndexOf (input)].Move (amount, moveSpeed);
+	void Move (Player input, float _H, float _V) {
+		playerCreatures[_Input.IndexOf (input)].Move (_H, _V, moveSpeed);
 	}
 
 	void Charge (Player input) {

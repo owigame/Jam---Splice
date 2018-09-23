@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5762458410b4144be5d5f70674cd45, type: 3}
+  m_Name: Crocodile
+  m_EditorClassIdentifier: 
+  uniformScale: 1
+  health: 100
+  damage: 300
+  head: {fileID: 21300000, guid: e3437d58709e9ef489a8dfec3ddfca57, type: 3}
+  jaw: {fileID: 21300002, guid: e3437d58709e9ef489a8dfec3ddfca57, type: 3}
+  body: {fileID: 21300004, guid: e3437d58709e9ef489a8dfec3ddfca57, type: 3}
+  tail: {fileID: 0}
+  frontLegsR: {fileID: 21300008, guid: e3437d58709e9ef489a8dfec3ddfca57, type: 3}
+  frontLegsL: {fileID: 21300008, guid: e3437d58709e9ef489a8dfec3ddfca57, type: 3}
+  backLegsR: {fileID: 21300006, guid: e3437d58709e9ef489a8dfec3ddfca57, type: 3}
+  backLegsL: {fileID: 21300006, guid: e3437d58709e9ef489a8dfec3ddfca57, type: 3}
+  hipsPivot: {x: -4.2, y: 1.98, z: 0}
+  bodyPivot: {x: 0, y: 0, z: 0}
+  headPivot: {x: 8.8, y: 0.76, z: 0}
+  jawPivot: {x: 0.42, y: -0.71, z: 0}
+  frontLegsRPivot: {x: 6.18, y: -0.65, z: 0}
+  frontLegsLPivot: {x: 7.3599987, y: 0.16000009, z: 0}
+  backLegsRPivot: {x: -1.02, y: 0.09, z: 0}
+  backLegsLPivot: {x: 0.58, y: 0.73, z: 0}
+  tailPivot: {x: 0, y: 0, z: 0}
+  bodyCol:
+    center: {x: 1.79, y: 0.55, z: 0}
+    direction: 0
+    height: 16.57
+    radius: 3.11
+  headCol:
+    center: {x: 3.54, y: -0.7, z: 0}
+    direction: 0
+    height: 7.68
+    radius: 2.04
+  frontLegsRCol:
+    center: {x: -0.074121654, y: -1.8283496, z: 0}
+    direction: 1
+    height: 5.24
+    radius: 2.025
+  frontLegsLCol:
+    center: {x: -0.07412356, y: -1.8283501, z: 0}
+    direction: 1
+    height: 5.24
+    radius: 2.025
+  backLegsRCol:
+    center: {x: 1.5318627, y: -1.6306907, z: 0}
+    direction: 1
+    height: 5.0200005
+    radius: 2.1
+  backLegsLCol:
+    center: {x: 1.5318627, y: -1.6306907, z: 0}
+    direction: 1
+    height: 5.0200005
+    radius: 2.1

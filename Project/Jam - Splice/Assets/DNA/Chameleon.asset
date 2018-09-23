@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5762458410b4144be5d5f70674cd45, type: 3}
+  m_Name: Chameleon
+  m_EditorClassIdentifier: 
+  uniformScale: 1
+  health: 60
+  damage: 30
+  head: {fileID: 21300002, guid: ba14ddb3744488e409eb7effdcde6279, type: 3}
+  jaw: {fileID: 21300004, guid: ba14ddb3744488e409eb7effdcde6279, type: 3}
+  body: {fileID: 21300000, guid: ba14ddb3744488e409eb7effdcde6279, type: 3}
+  tail: {fileID: 0}
+  frontLegsR: {fileID: 21300006, guid: ba14ddb3744488e409eb7effdcde6279, type: 3}
+  frontLegsL: {fileID: 21300006, guid: ba14ddb3744488e409eb7effdcde6279, type: 3}
+  backLegsR: {fileID: 21300008, guid: ba14ddb3744488e409eb7effdcde6279, type: 3}
+  backLegsL: {fileID: 21300008, guid: ba14ddb3744488e409eb7effdcde6279, type: 3}
+  hipsPivot: {x: -5.4, y: 1.9, z: 0}
+  bodyPivot: {x: 0, y: 0, z: 0}
+  headPivot: {x: 9.5, y: 3.31, z: 0}
+  jawPivot: {x: -0.04, y: -1.06, z: 0}
+  frontLegsRPivot: {x: 7.549999, y: 2.54, z: 0}
+  frontLegsLPivot: {x: 8.73, y: 3.35, z: 0}
+  backLegsRPivot: {x: -0.49, y: -0.74, z: 0}
+  backLegsLPivot: {x: 1.1099999, y: -0.09999975, z: 0}
+  tailPivot: {x: 0, y: 0, z: 0}
+  bodyCol:
+    center: {x: 7.6, y: 2.7, z: 0}
+    direction: 0
+    height: 12.68
+    radius: 2.47
+  headCol:
+    center: {x: 1.03, y: 0, z: 0}
+    direction: 0
+    height: 6.51
+    radius: 2.26
+  frontLegsRCol:
+    center: {x: -0.63711715, y: -2.0582838, z: 0}
+    direction: 1
+    height: 5.38
+    radius: 1.95
+  frontLegsLCol:
+    center: {x: -0.63711905, y: -2.0582838, z: 0}
+    direction: 1
+    height: 5.38
+    radius: 1.95
+  backLegsRCol:
+    center: {x: 2.0839972, y: 0.03364873, z: 0}
+    direction: 1
+    height: 4.88
+    radius: 2.8849998
+  backLegsLCol:
+    center: {x: 2.0839953, y: 0.03364873, z: 0}
+    direction: 1
+    height: 4.88
+    radius: 2.8849998

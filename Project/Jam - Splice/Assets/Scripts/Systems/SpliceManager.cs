@@ -12,7 +12,7 @@ public class SpliceManager : MonoBehaviour {
 	public CreatureLinks splicedCreature2;
 
 	void Start () {
-
+		TestNewCreature();
 	}
 
 	void Update () {

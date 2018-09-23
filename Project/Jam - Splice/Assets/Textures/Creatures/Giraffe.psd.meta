@@ -1,0 +1,246 @@
+fileFormatVersion: 2
+guid: cfda2a6f5966b8c4dac71d8ef093e565
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Giraffe_Body
+    21300002: Giraffe_Jaw
+    21300004: Giraffe_Head
+    21300006: Giraffe_FrontLegBack
+    21300008: Giraffe_BackLegBack
+    21300010: Giraffe_FrontLegFront
+    21300012: Giraffe_BackLegFront
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Giraffe_Body
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 2090
+        width: 1017
+        height: 1089
+      alignment: 9
+      pivot: {x: 0.17989102, y: 0.48541483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d10397f751e4a4ba799a0673975ea8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Giraffe_Jaw
+      rect:
+        serializedVersion: 2
+        x: 2964
+        y: 1438
+        width: 230
+        height: 158
+      alignment: 9
+      pivot: {x: 0.22547269, y: 0.6429353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8e8d90431cb2442bd5c460f3791c0a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Giraffe_Head
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 668
+        width: 869
+        height: 1212
+      alignment: 9
+      pivot: {x: 0.36015913, y: 0.122432746}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc747c95b0db7a4ebed849461316b7a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Giraffe_FrontLegBack
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 682
+        width: 298
+        height: 1247
+      alignment: 9
+      pivot: {x: 0.43469372, y: 0.8713696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca762735a027864e8abb685fe787b3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Giraffe_BackLegBack
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 696
+        width: 394
+        height: 1192
+      alignment: 9
+      pivot: {x: 0.6251009, y: 0.872797}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c0d97e7d92518458db4c96aa098092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Giraffe_FrontLegFront
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 2031
+        width: 383
+        height: 1217
+      alignment: 9
+      pivot: {x: 0.55842954, y: 0.9069149}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6ba1c960626a44c9f6f4906230450a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Giraffe_BackLegFront
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 2041
+        width: 333
+        height: 1222
+      alignment: 9
+      pivot: {x: 0.5381585, y: 0.9113427}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9e6eebf6524e146a94cc3be195e353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1a9125dda1122354bac3c0d00f4dc921
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
