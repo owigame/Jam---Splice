@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Rewired;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InputManager : MonoBehaviour {
 
@@ -16,7 +17,7 @@ public class InputManager : MonoBehaviour {
 	public float chargeDuration = 1;
 	public float chargeDamage = 30;
 
-	[Header("Stomp Parameters")]
+	[Header ("Stomp Parameters")]
 	public float stompDamage = 20;
 	public float stunDuration = 3;
 
@@ -24,28 +25,60 @@ public class InputManager : MonoBehaviour {
 	List<Player> _Input = new List<Player> ();
 	public List<CreatureLinks> playerCreatures = new List<CreatureLinks> ();
 
-	void Awake()
-	{
+	void Awake () {
 		instance = this;
 	}
 
 	void Start () {
+		GameManager.OnGamePhaseChanged += GamePhaseChanged;
+
 		_Input.Add (ReInput.players.GetPlayer (0));
 		_Input.Add (ReInput.players.GetPlayer (1));
 	}
 
-	void Update () {
-		foreach (Player input in _Input) {
-			Move (input, input.GetAxis ("Horizontal"), input.GetAxis ("Vertical"));
-			if (input.GetButtonDown ("Charge")) {
-				Charge (input);
+	IEnumerator FightPhase () {
+		while (GameManager.GamePhase == GamePhases.Fight) {
+			foreach (Player input in _Input) {
+				Move (input, input.GetAxis ("Horizontal"), input.GetAxis ("Vertical"));
+				if (input.GetButtonDown ("Charge")) {
+					Charge (input);
+				}
+				if (input.GetButtonDown ("Stomp")) {
+					Stomp (input);
+				}
+				if (input.GetButtonDown ("Maul")) {
+					Maul (input);
+				}
 			}
-			if (input.GetButtonDown ("Stomp")) {
-				Stomp (input);
+			yield return null;
+		}
+	}
+
+	IEnumerator SplicePhase () {
+		while (GameManager.GamePhase == GamePhases.Splice) {
+			foreach (Player input in _Input) {
+
 			}
-			if (input.GetButtonDown ("Maul")) {
-				Maul (input);
-			}
+			yield return null;
+		}
+	}
+
+	void GamePhaseChanged (GamePhases gamePhase) {
+		switch (gamePhase) {
+			case GamePhases.Fight:
+				foreach (Player input in _Input) {
+					input.controllers.maps.SetAllMapsEnabled (false);
+					input.controllers.maps.SetMapsEnabled (true, "Game");
+				}
+				StartCoroutine (FightPhase ());
+				break;
+			case GamePhases.Splice:
+				foreach (Player input in _Input) {
+					input.controllers.maps.SetAllMapsEnabled (false);
+					input.controllers.maps.SetMapsEnabled (true, "Splice");
+				}
+				StartCoroutine (SplicePhase ());
+				break;
 		}
 	}
 
@@ -61,5 +94,20 @@ public class InputManager : MonoBehaviour {
 	}
 	void Maul (Player input) {
 		playerCreatures[_Input.IndexOf (input)].Maul ();
+	}
+
+	public void InitiatePlayerReadyLimbo (UnityAction returnCall, int playerIndex) {
+		PlayerReadyLimbo (returnCall, playerIndex);
+	}
+
+	IEnumerator PlayerReadyLimbo (UnityAction returnCall, int playerIndex) {
+		bool cancel = false;
+		while (GameManager.GamePhase == GamePhases.Splice && cancel == false) {
+			if (_Input[playerIndex].GetButtonDown("UICancel")){
+				returnCall.Invoke();
+				cancel = true;
+			}
+			yield return null;
+		}
 	}
 }

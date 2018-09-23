@@ -22,11 +22,27 @@ public class CreatureObject : ScriptableObject {
 		}
 	}
 
+	public enum BodyParts {
+		Head, Body, FrontLegs, BackLegs
+	}
+
+	public enum SpecialAbilities {
+		Charge, Stomp, Maul, Strike
+	}
+
+	[System.Serializable]
+	public struct AnimalPowers {
+		public BodyParts bodyPart;
+		public SpecialAbilities specialAbility;
+	}
+
 	[Header ("Creature Settings")]
 	public float uniformScale = 0.5f;
+
 	[Header("Creature Config")]
 	public float health = 100;
 	public float damage = 100;
+	public List<AnimalPowers> animalPowers = new List<AnimalPowers>();
 
 	[Header ("Sprites")]
 	public Sprite head;

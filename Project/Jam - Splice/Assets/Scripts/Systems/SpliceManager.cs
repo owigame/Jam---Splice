@@ -4,6 +4,7 @@ using EasyButtons;
 using UnityEngine;
 
 public class SpliceManager : MonoBehaviour {
+	public static SpliceManager instance;
 
 	public List<CreatureObject> allCreatureTypes = new List<CreatureObject> ();
 
@@ -11,8 +12,12 @@ public class SpliceManager : MonoBehaviour {
 	public CreatureLinks splicedCreature1;
 	public CreatureLinks splicedCreature2;
 
+	void Awake () {
+		instance = this;
+	}
+
 	void Start () {
-		TestNewCreature();
+		TestNewCreature ();
 	}
 
 	void Update () {
@@ -27,11 +32,17 @@ public class SpliceManager : MonoBehaviour {
 
 	[Button]
 	void TestNewCreature () {
-		splicedCreature1.SetCreature(GetNewSplicedCreature (splicedDNA));
-		splicedCreature2.SetCreature(GetNewSplicedCreature (splicedDNA));
+		splicedCreature1.SetCreature (GetNewSplicedCreature (splicedDNA));
+		splicedCreature2.SetCreature (GetNewSplicedCreature (splicedDNA));
 	}
 
 	public SplicedCreature GetNewSplicedCreature (List<DNA> splicedDNA) {
 		return new SplicedCreature (splicedDNA);
+	}
+
+	public void GenerateNewCreature (int playerIndex, List<DNA> splicedDNA) {
+		CreatureLinks playerCreatureLinks = playerIndex == 0 ? splicedCreature1 : splicedCreature2;
+		playerCreatureLinks.gameObject.SetActive(true);
+		playerCreatureLinks.SetCreature (GetNewSplicedCreature (splicedDNA));
 	}
 }

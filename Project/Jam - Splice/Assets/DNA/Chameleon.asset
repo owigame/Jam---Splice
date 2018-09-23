@@ -14,6 +14,9 @@ MonoBehaviour:
   uniformScale: 1
   health: 60
   damage: 30
+  animalPowers:
+  - bodyPart: 0
+    specialAbility: 3
   head: {fileID: 21300002, guid: ba14ddb3744488e409eb7effdcde6279, type: 3}
   jaw: {fileID: 21300004, guid: ba14ddb3744488e409eb7effdcde6279, type: 3}
   body: {fileID: 21300000, guid: ba14ddb3744488e409eb7effdcde6279, type: 3}

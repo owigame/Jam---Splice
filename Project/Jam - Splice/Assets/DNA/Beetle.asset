@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: Beetle
   m_EditorClassIdentifier: 
   uniformScale: 1
-  health: 50
-  damage: 100
+  health: 300
+  damage: 20
+  animalPowers: []
   head: {fileID: 21300004, guid: 14d9f087003f9ca4882e5330811dbe87, type: 3}
   jaw: {fileID: 0}
   body: {fileID: 21300002, guid: 14d9f087003f9ca4882e5330811dbe87, type: 3}

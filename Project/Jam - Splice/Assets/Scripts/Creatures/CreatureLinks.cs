@@ -34,6 +34,7 @@ public class CreatureLinks : MonoBehaviour {
 	bool stunned = false;
 	bool chargeDamaged = false;
 	CreatureLinks inTriggerZone;
+	float lastScaleX = 0;
 
 	void Start () {
 		_animator = GetComponent<Animator> ();
@@ -104,6 +105,7 @@ public class CreatureLinks : MonoBehaviour {
 			if (charging == false) {
 				charging = true;
 				_animator.SetTrigger ("Charge");
+				lastScaleX = transform.localScale.x;
 				StartCoroutine (ChargeRun (chargeSpeed, chargeWarmUp, chargeDuration));
 			}
 		}
@@ -111,7 +113,7 @@ public class CreatureLinks : MonoBehaviour {
 
 	IEnumerator ChargeRun (float chargeSpeed, float chargeWarmUp, float chargeDuration) {
 		yield return new WaitForSeconds (chargeWarmUp);
-		while (chargeDuration > 0 && !stunned) {
+		while (chargeDuration > 0 && !stunned && lastScaleX == transform.localScale.x) {
 			chargeDuration -= Time.deltaTime;
 			_rigidBody.AddForce ((transform.localScale.x < 0 ? Vector3.left : Vector3.right) * Time.deltaTime * chargeSpeed);
 			yield return null;
@@ -122,6 +124,7 @@ public class CreatureLinks : MonoBehaviour {
 
 	public void Maul () {
 		if (!stunned) {
+			_animator.SetTrigger ("Maul");
 			_animator.SetTrigger ("Maul");
 		}
 	}
@@ -213,7 +216,7 @@ public class CreatureLinks : MonoBehaviour {
 	}
 
 	public void DealDamage (float amount, float stun = 0) {
-		creatureHealth -= amount/50;
+		creatureHealth -= amount / 50;
 		Mathf.Clamp01 (creatureHealth);
 		healthBar.fillAmount = creatureHealth / maxCreatureHealth;
 		if (creatureHealth <= 0) {
