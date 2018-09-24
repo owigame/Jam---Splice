@@ -35,13 +35,27 @@ public class CreatureLinks : MonoBehaviour {
 	bool chargeDamaged = false;
 	CreatureLinks inTriggerZone;
 	float lastScaleX = 0;
+	Vector3 origScale;
+	Vector3 origPos;
+
+	SplicedCreature oldCreature;
 
 	void Start () {
+		origScale = transform.localScale;
+		origPos = transform.position;
 		_animator = GetComponent<Animator> ();
 		_rigidBody = GetComponent<Rigidbody> ();
 	}
 
+	public void ResetCreature () {
+		transform.localScale = origScale;
+		transform.position = origPos;
+		stunned = false;
+		SetCreature (oldCreature);
+	}
+
 	public void SetCreature (SplicedCreature splicedCreature) {
+		oldCreature = splicedCreature;
 		head.sprite = splicedCreature.head.head;
 		jaw.sprite = splicedCreature.jaw.jaw;
 		body.sprite = splicedCreature.body.body;
@@ -77,6 +91,7 @@ public class CreatureLinks : MonoBehaviour {
 			splicedCreature.body.health;
 
 		maxCreatureHealth = creatureHealth;
+		healthBar.fillAmount = creatureHealth / maxCreatureHealth;
 
 	}
 
@@ -223,6 +238,7 @@ public class CreatureLinks : MonoBehaviour {
 			Debug.Log ("Creature Died!");
 			stunned = true;
 			transform.localScale = Vector3.zero;
+			GameManager.instance.GameOver ();
 			this.enabled = false;
 
 		} else if (stun > 0) {

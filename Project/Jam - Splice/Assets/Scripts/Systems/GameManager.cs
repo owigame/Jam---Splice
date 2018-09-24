@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
 
 	public GamePhases gamePhase;
 
-	[Header("Players")]
+	[Header ("Players")]
 	public bool player1Ready = false;
 	public bool player2Ready = false;
 
@@ -35,16 +35,21 @@ public class GameManager : MonoBehaviour {
 		if (OnGamePhaseChanged != null) OnGamePhaseChanged (gamePhase);
 	}
 
-	public void PlayerReadyToFight(int index, bool ready){
-		if (index == 0){
+	public void PlayerReadyToFight (int index, bool ready) {
+		if (index == 0) {
 			player1Ready = ready;
 		}
-		if (index == 1){
+		if (index == 1) {
 			player2Ready = ready;
 		}
-		if (player1Ready && player2Ready){
+		if (player1Ready && player2Ready) {
 			gamePhase = GamePhases.Fight;
-			OnGamePhaseChanged(gamePhase);
+			OnGamePhaseChanged (gamePhase);
 		}
+	}
+
+	public void GameOver () {
+		gamePhase = GamePhases.Splice;
+		OnGamePhaseChanged (gamePhase);
 	}
 }

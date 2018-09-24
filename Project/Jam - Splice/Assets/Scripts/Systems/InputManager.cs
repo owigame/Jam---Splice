@@ -25,6 +25,9 @@ public class InputManager : MonoBehaviour {
 	List<Player> _Input = new List<Player> ();
 	public List<CreatureLinks> playerCreatures = new List<CreatureLinks> ();
 
+	[Header ("Player UI")]
+	public UIManageDNASelection[] uiManagerDNASelection;
+
 	void Awake () {
 		instance = this;
 	}
@@ -56,9 +59,7 @@ public class InputManager : MonoBehaviour {
 
 	IEnumerator SplicePhase () {
 		while (GameManager.GamePhase == GamePhases.Splice) {
-			foreach (Player input in _Input) {
 
-			}
 			yield return null;
 		}
 	}
@@ -68,7 +69,7 @@ public class InputManager : MonoBehaviour {
 			case GamePhases.Fight:
 				foreach (Player input in _Input) {
 					input.controllers.maps.SetAllMapsEnabled (false);
-					input.controllers.maps.SetMapsEnabled (true, "Game");
+					input.controllers.maps.SetMapsEnabled (true, "Fight");
 				}
 				StartCoroutine (FightPhase ());
 				break;
@@ -76,6 +77,10 @@ public class InputManager : MonoBehaviour {
 				foreach (Player input in _Input) {
 					input.controllers.maps.SetAllMapsEnabled (false);
 					input.controllers.maps.SetMapsEnabled (true, "Splice");
+				}
+				foreach (CreatureLinks link in playerCreatures) {
+					link.enabled = true;
+					link.ResetCreature();
 				}
 				StartCoroutine (SplicePhase ());
 				break;
@@ -103,8 +108,8 @@ public class InputManager : MonoBehaviour {
 	IEnumerator PlayerReadyLimbo (UnityAction returnCall, int playerIndex) {
 		bool cancel = false;
 		while (GameManager.GamePhase == GamePhases.Splice && cancel == false) {
-			if (_Input[playerIndex].GetButtonDown("UICancel")){
-				returnCall.Invoke();
+			if (_Input[playerIndex].GetButtonDown ("UICancel")) {
+				returnCall.Invoke ();
 				cancel = true;
 			}
 			yield return null;
